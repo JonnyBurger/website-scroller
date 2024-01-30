@@ -5,7 +5,7 @@ export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Composition
-				id="MyComp"
+				id="WebsiteScroller"
 				component={MyComposition}
 				width={1920}
 				height={1080}
