@@ -1,5 +1,5 @@
 import {Composition} from 'remotion';
-import {MyComposition} from './Composition';
+import {calculateMetadata, MyComposition, schema} from './Composition';
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -7,10 +7,16 @@ export const RemotionRoot: React.FC = () => {
 			<Composition
 				id="MyComp"
 				component={MyComposition}
-				durationInFrames={60}
-				fps={30}
-				width={1280}
-				height={720}
+				width={1920}
+				height={1080}
+				schema={schema}
+				calculateMetadata={calculateMetadata}
+				defaultProps={{
+					url: 'https://transfer.sh/xwlRqA1qxi/ping.jpg',
+					width: null,
+					height: null,
+					duration: 5,
+				}}
 			/>
 		</>
 	);
