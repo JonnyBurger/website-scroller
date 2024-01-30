@@ -1,34 +1,41 @@
 # Remotion video
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.gif">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+Turn a URL into a video that scrolls the website to the top and gives a video. Inspired by
 
-Welcome to your Remotion project!
+This is how you could turn ping.gg into a video:
+
+```bash
+set -e
+sudo npm i -g puppeteer-screenshot-cli
+puppeteer-screenshot --width 1920 --fullPage 'https://ping.gg/' > screenshot.jpg
+export SCREENSHOT=$(curl --upload-file ./screenshot.jpg https://transfer.sh/screenshot.jpg)
+rm screenshot.jpg
+sudo npm i -g @remotion/cli@4.0.102
+remotion render https://website-scroller.vercel.app/ --codec=prores --props="{\"url\": \"$SCREENSHOT\", \"duration\": 5}" website.mov
+```
+
+## Customize
+
+Fork and customize the `Composition.tsx` file. [Deploy the Remotion Studio](https://www.remotion.dev/docs/studio/deploy-static) for example to Vercel. Replace the URL in the `render` command.
 
 ## Commands
 
 **Install Dependencies**
 
 ```console
-npm i
+bun i
 ```
 
 **Start Preview**
 
 ```console
-npm start
+bun start
 ```
 
 **Render video**
 
 ```console
-npm run build
+bun run build
 ```
 
 **Upgrade Remotion**
