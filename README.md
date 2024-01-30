@@ -1,6 +1,6 @@
 # Remotion video
 
-Turn a URL into a video that scrolls the website to the top and gives a video. Inspired by
+Turn a URL into a video that scrolls the website to the top and gives a video. Inspired by [this tweet](https://twitter.com/t3dotgg/status/1752314479482945845)
 
 This is how you could turn ping.gg into a video:
 
